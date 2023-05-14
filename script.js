@@ -39,6 +39,7 @@ function searchDigimons(event){
     //console.log(event.target.value)
     const text = event.target.value.toLowerCase()
     const digimonTarget = digimonList.querySelectorAll('li')
+    let emptyChart = true
     
     //create a foreach to iterate all digimon in list 
     digimonTarget.forEach(digimonsTargets => {
@@ -52,6 +53,16 @@ function searchDigimons(event){
             digimonsTargets.style.display = 'none'
         }
     })
+    const message = digimonList.querySelector('.noDigimonFound')  || document.createElement('p')
+    message.classList.add('noDigimonFound')
+    message.textContent = 'No Digimon Found....'
+        
+    if(emptyChart){
+        digimonList.appendChild(message)
+        
+    }else if(message.parentNode === digimonList){
+        digimonList.removeChild(message)
+    }
 
 }
 
