@@ -10,12 +10,23 @@ const digimonList = document.querySelector('.digimonList')
 function buttonLike(event){
     event.preventDefault()
     const buttonClick  = event.target 
+    
+    //create a counter to get the number of likes 
+    let counterLikes = parseInt(buttonClick.getAttribute('data-likes'))||0
     if(buttonClick.textContent === empyHeart){
 
         buttonClick.textContent = fullHeart
-        //button.classList.add('activated-heart')
+        console.log(buttonClick)
+        buttonClick.classList.add('activated-heart')
+        buttonClick.classList.add('ghost-button')
+        counterLikes++
+        buttonClick.setAttribute('data-likes',counterLikes)
+        buttonClick.textContent = `${counterLikes}${fullHeart}`
     }else{
         buttonClick.textContent = empyHeart
+        buttonClick.classList.remove('activated-heart')
+        buttonClick.classList.remove('ghost-button')
+        buttonClick.setAttribute('data-likes',counterLikes)
     }
     
 
