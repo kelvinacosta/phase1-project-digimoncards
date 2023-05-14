@@ -5,7 +5,14 @@ const fullHeart= '❤️';
 //Create a variable to get the class of a html list
 const digimonList = document.querySelector('.digimonList')
 
-//create a variable to store a fetch and then call it
+
+//Create a function to the button like event
+function buttonLike(event){
+    event.preventDefault()
+    console.log(event)
+
+}
+//create a variable to store a fetch function and then call it
 const fetchData = ()=>{
 
     //Fetching digimon api from data
@@ -31,6 +38,9 @@ const fetchData = ()=>{
         //create a button and then add a click event to button
         const likeButton = document.createElement('button')
         likeButton.textContent = empyHeart
+
+        //add a click event to the button
+        likeButton.addEventListener('click',buttonLike)
     
         //Appending tags to list of digimon <li>
         listDigimon.appendChild(digimonImage)
