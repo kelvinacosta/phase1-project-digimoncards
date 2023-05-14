@@ -46,6 +46,7 @@ const fetchData = ()=>{
         //create a button and then add a click event to button
         const likeButton = document.createElement('button')
         likeButton.textContent = empyHeart
+        likeButton.classList.add('like')
 
         //add a click event to the button
         likeButton.addEventListener('click',buttonLike)
