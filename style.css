@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+  }
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
     font-style: italic;
@@ -14,4 +16,12 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-bottom: 20px;
   }
