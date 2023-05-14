@@ -23,7 +23,10 @@ fetch('https://digimon-api.vercel.app/api/digimon')
     //Appending tags to list of digimon <li>
     listDigimon.appendChild(digimonImage)
     listDigimon.appendChild(digimonName)
-    console.log(listDigimon)
+    //console.log(listDigimon)
+
+    digimonList.appendChild(listDigimon)
+
 
 
 
