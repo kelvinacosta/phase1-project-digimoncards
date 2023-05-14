@@ -81,6 +81,8 @@ const fetchData = ()=>{
             
             //Appends level list to the digimonList global
             listDigimon.appendChild(levelList)
+
+            getLevelButton.disabled = true;
             
         })
         
