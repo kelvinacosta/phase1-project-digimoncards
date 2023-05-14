@@ -21,7 +21,7 @@ function buttonLike(event){
         buttonClick.classList.add('ghost-button')
         counterLikes++
         buttonClick.setAttribute('data-likes',counterLikes)
-        buttonClick.textContent = `${counterLikes}${fullHeart}`
+        buttonClick.textContent = `${counterLikes} ${fullHeart}`
     }else{
         buttonClick.textContent = empyHeart
         buttonClick.classList.remove('activated-heart')
@@ -61,10 +61,34 @@ const fetchData = ()=>{
 
         //add a click event to the button
         likeButton.addEventListener('click',buttonLike)
+
+        //Create and Get level of digimon by clicking a button
+
+        const getLevelButton = document.createElement('button')
+        getLevelButton.classList.add('level')
+        getLevelButton.textContent = 'Show Level'
+
+        //Adding a click event to level button
+        getLevelButton.addEventListener('click',(event)=>{
+            event.preventDefault()
+            
+            const digimonLevel = document.createElement('p')
+            digimonLevel.textContent = `Level: ${digimon.level}` 
+
+            const levelList = document.createElement('ul')
+            //Appends level of digimon to the created list
+            levelList.appendChild(digimonLevel)
+            
+            //Appends level list to the digimonList global
+            listDigimon.appendChild(levelList)
+            
+        })
+        
     
         //Appending tags to list of digimon <li>
         listDigimon.appendChild(digimonImage)
         listDigimon.appendChild(digimonName)
+        listDigimon.appendChild(getLevelButton)
         listDigimon.appendChild(likeButton)
         //console.log(listDigimon)
         
