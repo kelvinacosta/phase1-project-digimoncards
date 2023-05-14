@@ -30,9 +30,31 @@ function buttonLike(event){
         buttonClick.classList.remove('ghost-button')
         buttonClick.setAttribute('data-likes',counterLikes)
     }
-    
 
 }
+
+//create a input event to search each digimon in the bar
+function searchDigimons(event){
+    event.preventDefault()
+    //console.log(event.target.value)
+    const text = event.target.value.toLowerCase()
+    const digimonTarget = digimonList.querySelectorAll('li')
+    
+    //create a foreach to iterate all digimon in list 
+    digimonTarget.forEach(digimonsTargets => {
+        const textSearch = digimonsTargets.textContent.toLocaleLowerCase()
+
+        if(textSearch.includes(text)){  
+            digimonsTargets.style.display ='block'
+
+
+        }else{
+            digimonsTargets.style.display = 'none'
+        }
+    })
+
+}
+
 //create a variable to store a fetch function and then call it
 const fetchData = ()=>{
 
