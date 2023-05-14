@@ -144,4 +144,5 @@ const fetchData = ()=>{
 
 //calling function fetchdata
 fetchData()
+//Calling search event
 inputSearch.addEventListener('input',searchDigimons)
