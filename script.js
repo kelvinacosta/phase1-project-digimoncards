@@ -6,11 +6,18 @@ const fullHeart= '❤️';
 const digimonList = document.querySelector('.digimonList')
 
 
-//Create a function to the button like event
+//Create a function to the button like event and the numbers of click likes
 function buttonLike(event){
     event.preventDefault()
     const buttonClick  = event.target 
-    buttonClick.textContent = fullHeart
+    if(buttonClick.textContent === empyHeart){
+
+        buttonClick.textContent = fullHeart
+        //button.classList.add('activated-heart')
+    }else{
+        buttonClick.textContent = empyHeart
+    }
+    
 
 }
 //create a variable to store a fetch function and then call it
