@@ -1,6 +1,8 @@
 //Create 2 variables to store the like button functionality whit an emoji context of a heart
 const empyHeart = '🤍';
 const fullHeart= '❤️';
+//Create a variable to get the input event
+const inputSearch = document.querySelector('input[type="search"]')
 
 //Create a variable to get the class of a html list
 const digimonList = document.querySelector('.digimonList')
@@ -109,3 +111,4 @@ const fetchData = ()=>{
 
 //calling function fetchdata
 fetchData()
+inputSearch.addEventListener('input',searchDigimons)
