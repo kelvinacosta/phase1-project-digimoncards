@@ -1,11 +1,14 @@
 //Create 2 variables to store the like button functionality whit an emoji context of a heart
 const empyHeart = '🤍';
 const fullHeart= '❤️';
-//Create a variable to get the input event
-const inputSearch = document.querySelector('input[type="search"]')
-
 //Create a variable to get the class of a html list
 const digimonList = document.querySelector('.digimonList')
+//Create a variable to get the input event
+const inputSearch = document.querySelector('input[type="search"]')
+const filterButton = document.getElementById('filterButton')
+const filterSelect = document.getElementById('filterSelect')
+
+
 
 
 //Create a function to the button like event and the numbers of click likes
@@ -76,7 +79,7 @@ const fetchData = ()=>{
         
         //create a list of digimon to store each item
         const listDigimon = document.createElement('li')
-        listDigimon.classList.add('.digimon')
+        listDigimon.classList.add('digimon')
         //console.log(listDigimon)
     
         //Create tags name,img and level to append to the list digimon
