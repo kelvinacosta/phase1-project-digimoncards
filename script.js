@@ -9,7 +9,8 @@ const digimonList = document.querySelector('.digimonList')
 //Create a function to the button like event
 function buttonLike(event){
     event.preventDefault()
-    console.log(event)
+    const buttonClick  = event.target 
+    buttonClick.textContent = fullHeart
 
 }
 //create a variable to store a fetch function and then call it
