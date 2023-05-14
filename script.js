@@ -2,7 +2,7 @@
 const digimonList = document.querySelector('.digimonList')
 
 //create a variable to store a fetch and then call it
-const fetchData()=>{
+const fetchData = ()=>{
 
     //Fetching digimon api from data
     fetch('https://digimon-api.vercel.app/api/digimon')
