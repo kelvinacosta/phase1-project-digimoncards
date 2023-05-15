@@ -1,8 +1,10 @@
 //Create 2 variables to store the like button functionality whit an emoji context of a heart
 const empyHeart = '🤍';
 const fullHeart= '❤️';
+
 //Create a variable to get the class of a html list
 const digimonList = document.querySelector('.digimonList')
+
 //Create a variable to get the input event
 const inputSearch = document.querySelector('input[type="search"]')
 const filterButton = document.getElementById('filterButton')
@@ -35,7 +37,28 @@ function buttonLike(event){
     }
 
 }
-
+//Create a function to get the alphabetical order from the list 
+const digimonByName = () => {
+    const byName = Array.from(digimonList.querySelectorAll('.digimon'));
+    //calling sorting function to get the list in the alphabetical order
+    byName.sort((a, b) => {
+      const groupA = a.querySelector('h2').textContent.toLowerCase();
+      const groupB = b.querySelector('h2').textContent.toLowerCase();
+      return groupA.localeCompare(groupB);
+    });
+    byName.forEach((digimon, index) => {
+      digimon.style.order = index;
+    });
+  };
+  //Adding an event to the the click event
+  filterButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    digimonByName();
+  });
+  /*
+  Still Pending sorting in descending order, level order....
+  */
+  
 //create a input event to search each digimon in the bar
 function searchDigimons(event){
     event.preventDefault()
@@ -80,7 +103,7 @@ const fetchData = ()=>{
         //create a list of digimon to store each item
         const listDigimon = document.createElement('li')
         listDigimon.classList.add('digimon')
-        //console.log(listDigimon)
+        
     
         //Create tags name,img and level to append to the list digimon
         const digimonImage = document.createElement('img')
@@ -90,7 +113,7 @@ const fetchData = ()=>{
         
         const digimonName = document.createElement('h2')
         digimonName.textContent = digimon.name
-        //console.log(digimonName)
+        
 
         //create a button and then add a click event to button
         const likeButton = document.createElement('button')
